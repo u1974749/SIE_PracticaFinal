@@ -102,7 +102,14 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _Fullscreen_AlphaBlendOperation: 0
+    - _Fullscreen_BlendMode: 1
+    - _Fullscreen_ColorBlendOperation: 0
     - _Fullscreen_DepthWrite: 1
+    - _Fullscreen_DstAlphaBlend: 10
+    - _Fullscreen_DstColorBlend: 10
+    - _Fullscreen_SrcAlphaBlend: 1
+    - _Fullscreen_SrcColorBlend: 5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -120,8 +127,8 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _VignetteIntensity: 0.69
-    - _VignetteRadious: 13.2
-    - _VoronoiPower: 2
+    - _VignetteRadious: 6
+    - _VoronoiPower: -0.3
     - _VoronoiScale: 6
     - _VoronoiSpeed: 3
     - _WorkflowMode: 1
