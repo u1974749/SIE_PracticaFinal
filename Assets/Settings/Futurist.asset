@@ -130,4 +130,4 @@ MonoBehaviour:
   passMaterial: {fileID: 2100000, guid: 5cabd9b68fe91754ba53e2001bda39f3, type: 2}
   injectionPoint: 600
   requirements: 4
-  passIndex: 1
+  passIndex: 0
