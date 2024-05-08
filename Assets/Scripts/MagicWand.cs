@@ -18,6 +18,15 @@ public class MagicWand : MonoBehaviour
                 {
                     changeShaderObject.changeShader();
                 }
+                else
+                {
+                     ChangeMultyShaderObject changeMultyShaderObject = hit.collider.GetComponent<ChangeMultyShaderObject>();
+                     if(changeMultyShaderObject != null) 
+                     {
+                        changeMultyShaderObject.changeShader();
+                     }
+                }
+                
             }
         }
     }

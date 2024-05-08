@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3482311168173699204}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.00000023842, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3482311168442052884}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3482311168173699224
 MeshFilter:
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 841a3c82d75aca64985aecc87b9df5c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 3482311168442052886}
   - component: {fileID: 3482311168442052885}
   - component: {fileID: 3482311168442052887}
+  - component: {fileID: 5463820991749788849}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -109,6 +110,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3482311168442052883}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.979, y: 4.254, z: 6.843}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -117,7 +119,6 @@ Transform:
   - {fileID: 3482311168584061052}
   - {fileID: 3482311168173699205}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3482311168442052886
 MonoBehaviour:
@@ -131,14 +132,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6004b8d7edcfb54e829ea9b94f37945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 4
+  maxSpeed: 6
   accSpeed: 18
   maxRotationSpeed: 450
   RotationSpeedMouse: 25
   accRotation: 500
   maxRotation: 60
   minRotation: -60
-  gravity: -0.1
+  gravity: -9.6
   camara: {fileID: 3482311168584061051}
 --- !u!143 &3482311168442052885
 CharacterController:
@@ -148,9 +149,17 @@ CharacterController:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3482311168442052883}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
@@ -170,7 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 7fd39ef055219bc45b43c0899411afc5, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 7fd39ef055219bc45b43c0899411afc5,
+    type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -198,7 +208,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 2d52c275-3d43-445e-a767-674403f38171
-    m_ActionName: GamePlay/move[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+    m_ActionName: 'GamePlay/move[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3482311168442052886}
@@ -214,7 +224,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: a88b1223-dc54-436f-b6b8-e77f310b8872
-    m_ActionName: GamePlay/AxisX[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+    m_ActionName: 'GamePlay/AxisX[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3482311168442052886}
@@ -230,7 +240,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: cff53d3b-431f-4a45-a355-7b52f9e328df
-    m_ActionName: GamePlay/AxisCameraX[/XInputControllerWindows/rightStick/left,/XInputControllerWindows/rightStick/right]
+    m_ActionName: 'GamePlay/AxisCameraX[/XInputControllerWindows/rightStick/left,/XInputControllerWindows/rightStick/right]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3482311168442052886}
@@ -246,7 +256,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 1246adaf-4aea-4b49-8b0c-638da605a408
-    m_ActionName: GamePlay/AxisCameraY[/XInputControllerWindows/rightStick/up,/XInputControllerWindows/rightStick/down]
+    m_ActionName: 'GamePlay/AxisCameraY[/XInputControllerWindows/rightStick/up,/XInputControllerWindows/rightStick/down]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3482311168442052886}
@@ -262,7 +272,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 752318b1-8f10-44d5-af4e-abacd1ad90b2
-    m_ActionName: GamePlay/MouseAxisX[/Mouse/delta/x]
+    m_ActionName: 'GamePlay/MouseAxisX[/Mouse/delta/x]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3482311168442052886}
@@ -278,12 +288,24 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 79840e20-2802-4ccc-ae81-ba67c9d5661d
-    m_ActionName: GamePlay/MouseAxisY[/Mouse/delta/y]
+    m_ActionName: 'GamePlay/MouseAxisY[/Mouse/delta/y]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamePlay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &5463820991749788849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3482311168442052883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34ac8822a9175942a4c217eae1c0737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3482311168584061049
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,13 +331,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3482311168584061049}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.67700005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3482311168442052884}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3482311168584061051
 Camera:
@@ -331,9 +353,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
