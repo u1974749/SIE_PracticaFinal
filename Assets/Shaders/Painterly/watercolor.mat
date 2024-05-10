@@ -150,7 +150,7 @@ Material:
     - _AlphaClip: 1
     - _AlphaToMask: 0
     - _Blend: 3
-    - _BlendModePreserveSpecular: 1
+    - _BlendModePreserveSpecular: 0
     - _BumpScale: 1
     - _CastShadows: 1
     - _ClearCoatMask: 0
