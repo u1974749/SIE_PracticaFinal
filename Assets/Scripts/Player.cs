@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
 {
 
 #region Variables Publicas
+
+    public bool invertCamera = false;
+    public float rotCameraZ = 0f;
+
     //Movimiento
     [Header("Parametros Movimiento Jugador")]
     public float maxSpeed = 4f;
@@ -21,6 +25,8 @@ public class Player : MonoBehaviour
     public float accRotation = 0.1f;
     public float maxRotation = 60f;
     public float minRotation = -60f;
+
+    
 
     [Space(5)]
     [Header("Otros")]
@@ -47,7 +53,7 @@ public class Player : MonoBehaviour
     private float mouseRotateAxiX = 0f; // Input axis x raton.
     private float mouseRotateAxiY = 0f; //Input axis y raton
     bool mando = false; //Indica al juego si se esta usando un mando o no (actualmente el canvio solo se ve reflejado si el jugador rota la camara).
-
+    
     enum Player_State {idle,walk,pause};
     Player_State currentState = Player_State.idle;
 #endregion
@@ -57,6 +63,13 @@ public class Player : MonoBehaviour
     {
         _controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
+        camara = Camera.main;
+
+        if(invertCamera) 
+        {
+            rotCameraZ = 180f;
+        }
+
     }
 
     // Update is called once per frame
@@ -108,7 +121,7 @@ public class Player : MonoBehaviour
         h_rot += rotationSpeedH * Time.deltaTime;
         v_rot -= rotationSpeedV * Time.deltaTime;       
         v_rot = Mathf.Clamp(v_rot, minRotation, maxRotation);
-        camara.transform.localEulerAngles = new Vector3(v_rot, 0f, 0f);
+        camara.transform.localEulerAngles = new Vector3(v_rot, 0f, rotCameraZ);
         transform.localEulerAngles = new Vector3(0f, h_rot, 0f);
     }
     void PlayerRotate()
@@ -132,7 +145,7 @@ public class Player : MonoBehaviour
         h_rot -= joyRotateAxiX * rotationSpeedH * Time.deltaTime;
         v_rot -= joyRotateAxiY * rotationSpeedV * Time.deltaTime;
         v_rot = Mathf.Clamp(v_rot, minRotation, maxRotation);
-        camara.transform.localEulerAngles = new Vector3(v_rot,0f,0f);
+        camara.transform.localEulerAngles = new Vector3(v_rot,0f,rotCameraZ);
         transform.localEulerAngles = new Vector3(0f, h_rot, 0f); 
     }
 

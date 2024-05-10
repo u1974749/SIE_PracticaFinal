@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ChangeMultyShaderObject : MonoBehaviour
@@ -29,10 +30,25 @@ public class ChangeMultyShaderObject : MonoBehaviour
         
         if (index < shaders.Length && index > -1) 
         {
-            GetComponent<Renderer>().materials = shaders[index].materials;
+            List<Material>materiales = new List<Material>();
+            if (shaders[index].keepMaterial) 
+            {
+                foreach(Material mat in  defaultMaterials) 
+                {
+                    materiales.Add(mat);
+                }
+            }
+
+            foreach(Material mat in  shaders[index].materials) 
+            {
+                materiales.Add(mat);
+            }
+                
+    
+            GetComponent<Renderer>().materials = materiales.ToArray();
         }
         else 
-        {
+        {   
             GetComponent<Renderer>().materials = defaultMaterials.ToArray();
         }
     }

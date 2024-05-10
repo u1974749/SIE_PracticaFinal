@@ -4,4 +4,5 @@ using UnityEngine;
 public class MultyShader : ScriptableObject
 {
    public Material[] materials;
+   public bool keepMaterial;
 }

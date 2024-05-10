@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 6
-  accSpeed: 18
+  accSpeed: 180
   maxRotationSpeed: 450
   RotationSpeedMouse: 25
   accRotation: 500

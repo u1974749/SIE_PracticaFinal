@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b22d1208f70b9e408888ae1fe6a15de, type: 3}
-  m_Name: shader1
+  m_Name: MarioStrikers
   m_EditorClassIdentifier: 
   materials:
   - {fileID: 2100000, guid: 0461aeba75c2a3c4e80caa4676fc0700, type: 2}
